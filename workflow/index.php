@@ -190,7 +190,13 @@ class AWORKWER {
 		
 		<tr>
 		
-			<td>
+			<td class="staff-v-divider"></td>
+		
+		</tr>
+		
+		<tr>
+		
+			<td style="background-color:#484a5d; padding:20px;">
 				
 				<table class="answer-structure">';
 				
@@ -372,17 +378,27 @@ class AWORKWER {
 		
 		<tr>
 		
+			<td class="staff-v-divider"></td>
+		
+		</tr>
+		
+		<tr>
+		
 			<td>
 			
 				<table class="navi">
 						
-					<tr>' . ($_SESSION['w_amount'] > 1 ? '<td><span id="prev" class="prev" data-control-type="button">Назад</span></td>' : '') . '
+					<tr>' . ($_SESSION['w_amount'] > 1 ? '<td class="navi-left"><span id="prev" class="prev" data-control-type="button">Назад</span></td><td class="navi-h-divider"></td>' : '') . '
 								
-						<td><span id="clear" data-control-type="button">Очистить</span></td>
+						<td class="' . ($_SESSION['w_amount'] > 1 ? 'navi-center' : 'navi-left') . '"><span id="clear" data-control-type="button">Очистить</span></td>
+						
+						<td class="navi-h-divider"></td>
 								
-						<td><span id="next" class="next" data-control-type="button">Следующий</span></td>
+						<td class="navi-center"><span id="next" class="next" data-control-type="button">Следующий</span></td>
+						
+						<td class="navi-h-divider"></td>
 								
-						<td></td>
+						<td class="navi-right navi-right-preloader-static"></td>
 							
 					</tr>
 						
@@ -408,7 +424,7 @@ class AWORKWER {
 	
 		<tr>
 		
-			<td>Анкета заполнена и готова к отправке.<br>После отправки редактирование станет невозможным.<br>Отправляя анкету, вы подтверждаете правильность её заполнения.</td>
+			<td>Анкета заполнена и готова к отправке.<br>Отправляя анкету, вы подтверждаете правильность её заполнения.</td>
 		
 		</tr>
 		

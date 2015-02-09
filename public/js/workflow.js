@@ -394,9 +394,9 @@ function eventListener(e, a) {
 				
 					for (var i = 0; i < my.flength; i ++) {
 						
-						POSTDATA[my.id[0]][i + 1] = (my.flength != my.count) ? "ERROR:Неверное количество файлов" : (($.inArray(e.target.files[i].type, my.accept) == -1) ? "ERROR:едопустимый тип файла" : ((e.target.files[i].size > my.size) ? "ERROR:Недопустимый размер файла" : i + 1));
+						POSTDATA[my.id[0]][i + 1] = (my.flength != my.count) ? "ERROR:Неверное количество файлов" : (($.inArray(e.target.files[i].type, my.accept) == -1) ? "ERROR:Недопустимый тип файла" : ((e.target.files[i].size > my.size) ? "ERROR:Недопустимый размер файла" : i + 1));
 
-						$(my.parent).append("<div class='file-item-container'><span class='file-num'>" + (i + 1) + "</span><span class='file-name'>" + e.target.files[i].name + "<span></div>");
+						$(my.parent).append("<div class='file-item-container'><span class='file-num'>" + (i + 1) + "</span><span class='file-name'>" + e.target.files[i].name + " (" + (e.target.files[i].size / 1048576).toFixed(2) + " МБ)<span></div>");
 
 					}
 
@@ -484,12 +484,6 @@ function eventListener(e, a) {
 		
 			switch (a.id) {
 				
-				case "resetsubmit":
-				
-					EXTRAWINDOW();
-				
-				break // resetsubmit
-				
 				case "logout": $("form").append("<input type='hidden' name='logout'>").submit();
 				
 				break // logout
@@ -546,7 +540,7 @@ function eventListener(e, a) {
 						
 						if (typeof(v_err) == "undefined") {
 							
-							$("#next").addClass("waiting");
+							$(".navi-right").addClass("navi-right-preloader-animate");
 							
 							if ($("input[type=file]").length) $("form").append($("input[type=file]"));
 					
@@ -580,7 +574,7 @@ function eventListener(e, a) {
 				
 					document.forms[0].w_amount.value --;
 	
-					$("#prev").addClass("waiting");
+					$(".navi-right").addClass("navi-right-preloader-animate");
 						
 					$("form").submit();
 				
